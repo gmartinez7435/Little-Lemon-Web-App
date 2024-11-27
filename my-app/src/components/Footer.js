@@ -7,6 +7,7 @@ export default function Footer() {
     <>
       <img src={lllogo} alt="Logo" className="nav-logo" />
       <nav className="main-nav">
+        <label>Doormat Navigation</label>
         <ul>
           <li>
             <a href="/home">Home</a>
@@ -28,6 +29,24 @@ export default function Footer() {
           </li>
         </ul>
       </nav>
+
+    <nav className='contact-nav'>
+      <label>Contact</label>
+      <ul>
+        <li>Address</li>
+        <li>Phone Number</li>
+        <li>Email</li>
+      </ul>
+    </nav>
+
+    <nav className='social-media-nav'>
+      <label>Social Media Links</label>
+      <ul>
+        <li>Facebook</li>
+        <li>Instagram</li>
+        <li>Twitter</li>
+      </ul>
+    </nav>
     </>
   )
 }
