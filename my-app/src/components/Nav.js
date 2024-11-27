@@ -2,7 +2,7 @@ import React from "react";
 import lllogo from "../assets/lllogo.jpg";
 export default function Nav() {
   return (
-    <>
+    <header className="nav-header">
       <img src={lllogo} alt="Logo" className="nav-logo" />
       <nav className="main-nav">
         <ul>
@@ -26,7 +26,7 @@ export default function Nav() {
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 }
 

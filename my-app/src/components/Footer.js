@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <img src={lllogo} alt="Logo" className="nav-logo" />
-      <nav className="main-nav">
+      <nav className="footer-nav">
         <label>Doormat Navigation</label>
         <ul>
           <li>
