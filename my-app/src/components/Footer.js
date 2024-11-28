@@ -4,7 +4,7 @@ import lllogo from "../assets/lllogo.jpg";
 export default function Footer() {
 
   return (
-    <>
+    <footer className="nav-footer">
       <img src={lllogo} alt="Logo" className="nav-logo" />
       <nav className="footer-nav">
         <label>Doormat Navigation</label>
@@ -47,6 +47,6 @@ export default function Footer() {
         <li>Twitter</li>
       </ul>
     </nav>
-    </>
+    </footer>
   )
 }

@@ -52,3 +52,20 @@ text-decoration: none;
 color: rgb(0, 0, 0);
 padding: 4px;
 }
+
+.nav-footer {
+  background-color: rgb(245, 245, 245);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-footer li {
+  list-style: none;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
