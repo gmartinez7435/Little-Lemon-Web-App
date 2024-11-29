@@ -5,10 +5,12 @@ export default function Footer() {
 
   return (
     <footer className="nav-footer">
-      <img src={lllogo} alt="Logo" className="nav-logo" />
+      <img src={lllogo} alt="Logo" className="ftnav-logo" />
       <nav className="footer-nav">
-        <label>Doormat Navigation</label>
+        
         <ul>
+          <label>Doormat<br>
+          </br> Navigation</label>
           <li>
             <a href="/home">Home</a>
           </li>
@@ -31,8 +33,9 @@ export default function Footer() {
       </nav>
 
     <nav className='contact-nav'>
-      <label>Contact</label>
+      
       <ul>
+        <label>Contact</label>
         <li>Address</li>
         <li>Phone Number</li>
         <li>Email</li>
@@ -40,8 +43,9 @@ export default function Footer() {
     </nav>
 
     <nav className='social-media-nav'>
-      <label>Social Media Links</label>
+      
       <ul>
+        <label>Social Media Links</label>
         <li>Facebook</li>
         <li>Instagram</li>
         <li>Twitter</li>
