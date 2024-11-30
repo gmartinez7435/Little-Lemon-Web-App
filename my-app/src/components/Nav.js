@@ -1,10 +1,22 @@
-import React from "react";
-import lllogo from "../assets/lllogo.jpg";
+import React, { useState } from "react";
+import Top_Nav_Logo from "../assets/Top_Nav_Logo.png";
+
 export default function Nav() {
-  return (
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+    return (
     <header className="nav-header">
-      <img src={lllogo} alt="Logo" className="nav-logo" />
-      <nav className="main-nav">
+      <img src={Top_Nav_Logo} alt="Logo" className="nav-logo" />
+      <div className="hamburger" onClick={toggleMenu}>
+      <span className="bar"></span>
+      <span className="bar"></span>
+      <span className="bar"></span>
+      </div>
+      <nav className={`main-nav ${isOpen ? "active" : ""}`}>
         <ul>
           <li>
             <a href="/home">Home</a>

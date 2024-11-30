@@ -7,7 +7,7 @@ export default function Footer() {
       <img src={footerLogo} alt="Logo" className="ftnav-logo" />
         <nav className="footer-nav">
           <ul>
-            <label>
+            <label id="doormat">
               Doormat<br></br> Navigation
             </label>
             <li>
@@ -33,7 +33,7 @@ export default function Footer() {
 
         <nav className="contact-nav">
           <ul>
-            <label>Contact</label>
+            <label id="contact">Contact</label>
             <li>Address</li>
             <li>Phone Number</li>
             <li>Email</li>
@@ -42,7 +42,7 @@ export default function Footer() {
 
         <nav className="social-media-nav">
           <ul>
-            <label>Social Media Links</label>
+            <label id="social">Social Media Links</label>
             <li>Facebook</li>
             <li>Instagram</li>
             <li>Twitter</li>

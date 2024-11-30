@@ -1,15 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  gap: 20px;
+  flex-direction: column;
 }
 
 .nav-header {
@@ -18,16 +15,19 @@ code {
   font-size: 18pt;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-
+  justify-content: flex-end;
   flex-wrap: wrap;
+  border: 2px solid black;
+  gap: 20px;
+  flex-shrink: 0;
 }
 
 .nav-logo {
   max-height: 50px;
-  justify-content: space-around;
   flex: flex-start;
   border-radius: 0;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .main-nav ul {
@@ -38,55 +38,76 @@ code {
   flex: flex-end;
 }
 
-.main-nav li {
+.main-nav li a {
   margin-left: 8px;
+  text-decoration: none;
+  color: black;
 }
 
-.main-nav a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  padding: 4px;
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-nav.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure full width */
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 
 .nav-footer {
   background-color: rgb(237, 239, 238);
-  padding: 0px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .ftnav-logo {
   align-self: center;
   margin-right: 20px;
   border-radius: 0;
-  max-height: 125px;
+  max-height: 150px;
 }
 
 .nav-footer ul {
   list-style: none;
-  align-items: baseline;
   justify-content: flex-start;
+  align-items: center;
   margin-left: 25px;
 }
 
-.contact-nav {
-  justify-content: flex-start;
-}
 .footer-nav, .contact-nav, .social-media-nav {
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "markazi text";
   margin: 0;
 }
 
-p,
-span {
+p, span {
   font-family: "karla", sans-serif;
 }
 
@@ -145,4 +166,8 @@ footer li {
   color: rgb(73, 94, 87);
   font-size: 16pt;
   font-weight: medium;
+}
+
+#doormat, #contact, #social {
+  font-size: 18pt;
 }
