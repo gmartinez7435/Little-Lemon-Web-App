@@ -28,7 +28,6 @@ code {
   justify-content: space-around;
   flex: flex-start;
   border-radius: 0;
-
 }
 
 .main-nav ul {
@@ -50,11 +49,17 @@ code {
 }
 
 .nav-footer {
-  background-color: rgb(233, 231, 231);
+  background-color: rgb(237, 239, 238);
   padding: 0px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.ftnav-logo {
+  align-self: center;
+  margin-right: 20px;
+  border-radius: 0;
+  max-height: 125px;
 }
 
 .nav-footer ul {
@@ -64,14 +69,10 @@ code {
   margin-left: 25px;
 }
 
-.ftnav-logo {
-  align-self: center;
-  margin-right: 20px;
-  border-radius: 0;
-}
-
 .contact-nav {
   justify-content: flex-start;
+}
+.footer-nav, .contact-nav, .social-media-nav {
 }
 
 h1,
@@ -129,13 +130,19 @@ span {
   line-height: 1.5;
 }
 
-a {
+footer a {
   text-decoration: none;
-  color: #000;
+  color: rgb(73, 94, 87);
 }
 
 img {
   max-width: 100%;
   height: auto;
   border-radius: 16px;
+}
+
+footer li {
+  color: rgb(73, 94, 87);
+  font-size: 16pt;
+  font-weight: medium;
 }
