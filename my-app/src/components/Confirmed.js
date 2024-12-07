@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookingConfirmed = () => {
+const Confirmed = () => {
   return (
     <div className="confirm">
       <div>
@@ -13,4 +13,4 @@ const BookingConfirmed = () => {
   );
 };
 
-export default BookingConfirmed;
+export default Confirmed;

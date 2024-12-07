@@ -2,21 +2,23 @@ import React from "react";
 
 const BookingForm = (props) => {
   const [date, setDate] = React.useState("");
-  const [time, setTime] = React.useState("");
+  const [times, setTimes] = React.useState("");
   const [guest, setGuest] = React.useState("");
   const [occasion, setOccasion] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     props.SubmitForm(e);
-    // Dispatch the selected date to the Redux store
-    // This could be done by calling an action creator or by using the Redux-thunk middleware
-    // The chosen date should be passed as a payload to the action creator
+
   };
+
   const handleChange = (e) => {
     setDate(e);
-    props.dispatch(e);
+    if (typeof dispatch === "function") {
+      props.dispatch(e);
+    }
   };
+
   return (
     <header>
       <section>
@@ -38,13 +40,13 @@ const BookingForm = (props) => {
               <label htmlFor="book-time">Select Time</label>
               <select
                 id="book-time"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-              >
-                <option value="">select Time</option>
-                {props.availableTime.availableTime.map((availableTime) => {
-                  return <option key={availableTime}>{availableTime} </option>;
-                })}
+                value={times}
+                onChange={(e) => setTimes(e.target.value)}>
+                <option value="">Select Time</option>
+                {
+                props.availableTimes.availableTimes.map(availableTimes =>
+                {return <option key={availableTimes}>{availableTimes}</option>})
+                }
               </select>
             </div>
 
@@ -65,7 +67,6 @@ const BookingForm = (props) => {
               <label htmlFor="book-occasion">Occasion</label>
               <select
                 value={occasion}
-                key={occasion}
                 id="book-occasion"
                 onChange={(e) => setOccasion(e.target.value)}
                 name="booking-occasion"
@@ -79,6 +80,7 @@ const BookingForm = (props) => {
                 <option value="Other">Other</option>
               </select>
             </div>
+
             <div className="btnReceive">
               <input
                 aria-label="on Click"

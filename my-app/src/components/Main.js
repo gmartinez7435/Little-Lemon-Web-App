@@ -2,25 +2,27 @@ import React, { useReducer } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Booking from "./Booking";
+import Confirmed from "./Confirmed";
+
 
 const Main = () => {
   const seedRandom = function(seed) {
-    let m = 2**35 - 31;
-    let a = 185852;
-    let s = seed % m;
+    var m = 2**35 - 31;
+    var a = 185852;
+    var s = seed % m;
     return function() {
-     return (s = s * a % m) / m;
-    };
+      return (s = s * a % m) / m;
+    }
   };
 
   const fetchAPI = function(date) {
     let result = [];
-    let randomValue = seedRandom(date.getDate());
+    let random = seedRandom(date.getDate());
     for (let i = 17; i <= 23; i++) {
-      if (randomValue < 0.5) {
+      if (random() < 0.5) {
         result.push(i + ":00");
       }
-      if (randomValue > 0.5) {
+      if (random() > 0.5) {
         result.push(i + ":30");
       }
     }
@@ -31,15 +33,15 @@ const Main = () => {
     return true;
   };
 
-  const initialState = { availableTime: fetchAPI(new Date()) };
-  const [state, dispatch] = useReducer(updateTime, initialState);
+  const initialState = {availableTimes: fetchAPI(new Date())};
+  const [state, dispatch] = useReducer(updateTimes, initialState);
 
-  function updateTime(state, date) {
-    return { availableTime: fetchAPI(new Date()) };
+  function updateTimes(state, date) {
+    return {availableTimes: fetchAPI(new Date(date))};
   }
 
   const navigate = useNavigate();
-  function submitForm(formData) {
+  function submitForm (formData) {
     if (submitAPI(formData)) {
       navigate("/confirmation");
     } else {
@@ -47,18 +49,23 @@ const Main = () => {
     }
   }
 
+  console.log("Initial Available Time:", initialState.availableTimes); // Debug log
+
   return (
-    <main>
+    <main className="main">
       <Routes>
         <Route path="/" element={<Header />} />
         <Route
           path="/booking"
           element={
             <Booking
-              availableTime={state} // Correctly pass the availableTime prop
+              availableTimes={state}
               dispatch={dispatch}
-              submitForm={submitForm}/>}/>
-        <Route path="/" element={<Header />} />
+              submitForm={submitForm}
+            />
+          }
+        />
+        <Route path="/confirmed" element={<Confirmed />} />
       </Routes>
     </main>
   );

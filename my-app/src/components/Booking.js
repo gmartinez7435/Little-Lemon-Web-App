@@ -2,9 +2,11 @@ import React from "react";
 import BookingForm from "./BookingForm";
 
 const Booking = (props) => {
+  
+
   return (
     <BookingForm
-      availableTime={props.availableTime} // Ensure this prop is passed
+      availableTimes={props.availableTimes}
       dispatch={props.dispatch}
       SubmitForm={props.submitForm}
     />
