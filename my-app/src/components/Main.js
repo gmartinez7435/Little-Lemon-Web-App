@@ -3,6 +3,8 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Booking from "./Booking";
 import Confirmed from "./Confirmed";
+import Menu from "./Menu";
+
 
 
 const Main = () => {
@@ -53,8 +55,9 @@ const Main = () => {
 
   return (
     <main className="main">
+      <Header />
+      <Menu />
       <Routes>
-        <Route path="/" element={<Header />} />
         <Route
           path="/booking"
           element={
