@@ -1,12 +1,12 @@
 import React from "react";
 import BookingForm from "./BookingForm";
 
-const Booking = ({ availableTime, dispatch, submitForm }) => {
+const Booking = (props) => {
   return (
     <BookingForm
-      availableTime={availableTime} // Ensure this prop is passed
-      dispatch={dispatch}
-      submitForm={submitForm}
+      availableTime={props.availableTime} // Ensure this prop is passed
+      dispatch={props.dispatch}
+      SubmitForm={props.submitForm}
     />
   );
 };

@@ -8,7 +8,9 @@ const Main = () => {
     let m = 2**35 - 31;
     let a = 185852;
     let s = seed % m;
-    return (s = s * a % m) / m;
+    return function() {
+     return (s = s * a % m) / m;
+    };
   };
 
   const fetchAPI = function(date) {
@@ -33,7 +35,7 @@ const Main = () => {
   const [state, dispatch] = useReducer(updateTime, initialState);
 
   function updateTime(state, date) {
-    return { availableTime: fetchAPI(new Date(date)) };
+    return { availableTime: fetchAPI(new Date()) };
   }
 
   const navigate = useNavigate();
@@ -53,13 +55,10 @@ const Main = () => {
           path="/booking"
           element={
             <Booking
-              availableTime={state.availableTime} // Correctly pass the availableTime prop
+              availableTime={state} // Correctly pass the availableTime prop
               dispatch={dispatch}
-              submitForm={submitForm}
-            />
-          }
-        />
-        <Route path="/contact" element={<Contact />} />
+              submitForm={submitForm}/>}/>
+        <Route path="/" element={<Header />} />
       </Routes>
     </main>
   );
