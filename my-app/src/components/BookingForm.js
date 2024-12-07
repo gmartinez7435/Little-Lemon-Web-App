@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookingForm = () => {
+const BookingForm = (props) => {
   const [date, setDate] = React.useState("");
   const [time, setTime] = React.useState("");
   const [guest, setGuest] = React.useState("");
@@ -41,21 +41,10 @@ const BookingForm = () => {
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
               >
-                <option value="">Select Time</option>
-                <option value="9:00 AM">9:00 AM</option>
-                <option value="10:00 AM">10:00 AM</option>
-                <option value="11:00 AM">11:00 AM</option>
-                <option value="12:00 PM">12:00 PM</option>
-                <option value="1:00 PM">1:00 PM</option>
-                <option value="2:00 PM">2:00 PM</option>
-                <option value="3:00 PM">3:00 PM</option>
-                <option value="4:00 PM">4:00 PM</option>
-                <option value="5:00 PM">5:00 PM</option>
-                <option value="6:00 PM">6:00 PM</option>
-                <option value="7:00 PM">7:00 PM</option>
-                <option value="8:00 PM">8:00 PM</option>
-                <option value="9:00 PM">9:00 PM</option>
-                <option value="10:00 PM">10:00 PM</option>
+                <option value="">select Time</option>
+                {props.availableTime.availableTime.map((availableTime) => {
+                  return <option key={availableTime}>{availableTime} </option>;
+                })}
               </select>
             </div>
 
@@ -91,7 +80,11 @@ const BookingForm = () => {
               </select>
             </div>
             <div className="btnReceive">
-                <input aria-label="on Click" type="submit" value={"Book Your Table"} />
+              <input
+                aria-label="on Click"
+                type="submit"
+                value={"Book Your Table"}
+              />
             </div>
           </fieldset>
         </form>
